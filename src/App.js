@@ -1,10 +1,11 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Login from "./Login/Login";
 
 function App() {
   return (
     <div className="App">
-      <h1>Fast Fingers </h1>
+      <Login />
     </div>
   );
 }
