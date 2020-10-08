@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 function Home(props) {
-  console.log("routeProps", props);
+  console.log("props", props);
   return (
     <div>
-      <p>Player name :</p>
-      <p>Game Level: </p>
+      Player name: {props.name} Level :{props.level}
     </div>
   );
 }

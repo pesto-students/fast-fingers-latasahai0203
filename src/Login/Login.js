@@ -50,17 +50,24 @@ function Login(props) {
           <option value="HARD">HARD</option>
         </select>
       </div>
-      <button className="btn btn-primary" onClick={onNavigationHome}>
+      <button
+        type="submit"
+        className="btn btn-primary"
+        value="Submit"
+        onClick={onNavigationHome}
+      >
         Start Game
       </button>
-      <Router>
-        <Route
-          path="/home"
-          render={(props) => (
-            <Home {...props} name={state.name} level={state.level} /> // stuck here, props not passing through route component
-          )}
-        />
-      </Router>
+      <Route
+        path="/home"
+        render={(props) => (
+          <Home
+            {...props}
+            name={state.name}
+            level={state.level}
+          /> /* stuck here-- props do not pass to home component*/
+        )}
+      />
     </form>
   );
 }
