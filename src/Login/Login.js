@@ -1,4 +1,12 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import Home from "../Home/Home";
+
 function Login(props) {
   const [state, setState] = useState({
     name: "",
@@ -13,13 +21,18 @@ function Login(props) {
   };
 
   const handleSubmit = (event) => {
-    alert("An essay was submitted: " + state.name);
+    console.log("state", state);
     event.preventDefault();
   };
 
+  const onNavigationHome = () => {
+    props.history.push("/home");
+  };
+
   console.log("state", state);
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="login">
       <div className="form-group text-left">
         <input
           type="text"
@@ -37,9 +50,15 @@ function Login(props) {
           <option value="HARD">HARD</option>
         </select>
       </div>
-      <button type="submit" className="btn btn-primary" value="Submit">
+      <button
+        type="submit"
+        className="btn btn-primary"
+        value="Submit"
+        onClick={onNavigationHome}
+      >
         Start Game
       </button>
+      <Route path="/home" component={Home} />
     </form>
   );
 }
