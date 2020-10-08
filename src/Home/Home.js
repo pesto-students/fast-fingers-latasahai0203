@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 function Home(props) {
-  return <div>Hi Motu</div>;
+  console.log("props", props);
+  return (
+    <div>
+      Player name: {props.name} Level :{props.level}
+    </div>
+  );
 }
 
 export default Home;
