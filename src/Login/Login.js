@@ -58,7 +58,16 @@ function Login(props) {
       >
         Start Game
       </button>
-      <Route path="/home" component={Home} />
+      <Route
+        path="/home"
+        render={(props) => (
+          <Home
+            {...props}
+            name={state.name}
+            level={state.level}
+          /> /* stuck here-- props do not pass to home component*/
+        )}
+      />
     </form>
   );
 }
