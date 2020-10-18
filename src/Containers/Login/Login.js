@@ -26,7 +26,10 @@ function Login(props) {
   };
 
   const onNavigationHome = () => {
-    props.history.push("/home");
+    props.history.push("/home", {
+      name: state.name,
+      level: state.level,
+    });
   };
 
   console.log("state", state);
@@ -58,16 +61,7 @@ function Login(props) {
       >
         Start Game
       </button>
-      <Route
-        path="/home"
-        render={(props) => (
-          <Home
-            {...props}
-            name={state.name}
-            level={state.level}
-          /> /* stuck here-- props do not pass to home component*/
-        )}
-      />
+      <Route path="/home" component={Home} />
     </form>
   );
 }

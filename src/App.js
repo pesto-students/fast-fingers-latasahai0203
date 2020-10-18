@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Login from "./Login/Login";
-import Home from "./Home/Home";
+import Login from "./Containers/Login/Login";
+import Home from "./Containers/Home/Home";
 import {
   BrowserRouter as Router,
   Route,
